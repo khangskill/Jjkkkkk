@@ -1,0 +1,200 @@
+key is void2321212321
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "trade lagger",
+    LoadingTitle = "Rayfield Interface Suite",
+    LoadingSubtitle = "by Sirius",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+    Discord = {
+       Enabled = true,
+       Invite = "9rykum6q", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "enter key provided at website ",
+       Subtitle = "Key System",
+       Note = "find keys at .gg/9rykum6q ",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"void2321212321"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    } 
+ })
+
+ Rayfield:Notify({
+    Title = "Thanks for using the script",
+    Content = "Notification Content",
+    Duration = 6.5,
+    Image = 4483362458,
+    Actions = { -- Notification Buttons
+       Ignore = {
+          Name = "your welcome!",
+          Callback = function()
+          print("The user tapped Okay!")
+       end
+    },
+ },
+ })
+
+ local Tab = Window:CreateTab("trade lagger", 4483362458) -- Title, Image
+ local Section = Tab:CreateSection("lagger stuff")
+
+ local Toggle = Tab:CreateToggle({
+    Name = "Lagger enable (must be in trade to work)",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+    -- The function that takes place when the toggle is pressed
+    -- The variable (Value) is a boolean on whether the toggle is true or false
+    end,
+ })
+
+
+ local Slider = Tab:CreateSlider({
+   Name = "lagger speed",
+   Range = {0, 1000},
+   Increment = 10,
+   Suffix = "MS",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "enable anti afk",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+ local Tab = Window:CreateTab("misc", 4483362458) -- Title, Image
+ local Section = Tab:CreateSection("diff scripts")
+
+ local Button = Tab:CreateButton({
+    Name = "enable inf yeild",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+        -- The function that takes place when the button is pressed
+    end,
+ })
+
+
+
+ local Button = Tab:CreateButton({
+    Name = "duping method (takes 5 minutes to load)",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/ejSdXeFN", true))()
+        Rayfield:Notify({
+            Title = "please wait",
+            Content = "Notification Content",
+            Duration = 6.5,
+            Image = 4483362458,
+            Actions = { -- Notification Buttons
+               Ignore = {
+                  Name = "its loading !",
+                  Callback = function()
+                  print("The user tapped Okay!")
+               end
+            },
+         },
+         })-- The function that takes place when the button is pressed
+    end,
+ })
+ 
+ local Button = Tab:CreateButton({
+    Name = "enable noclip",
+    Callback = function()
+        Rayfield:Notify({
+            Title = "you cant disable it tho sorry",
+            Content = "Notification Content",
+            Duration = 6.5,
+            Image = 4483362458,
+            Actions = { -- Notification Buttons
+               Ignore = {
+                  Name = "Okay!",
+                  Callback = function()local Noclip = nil
+                    local Clip = nil
+                    
+                    function noclip()
+                        Clip = false
+                        local function Nocl()
+                            if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+                                for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                                    if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+                                        v.CanCollide = false
+                                    end
+                                end
+                            end
+                            wait(0.21) -- basic optimization
+                        end
+                        Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+                    end
+                    
+                    function clip()
+                        if Noclip then Noclip:Disconnect() end
+                        Clip = true
+                    end
+                    
+                    noclip() -- to toggle noclip() and clip()
+                  print("The user tapped Okay!")
+               end
+            },
+         },
+         })-- The function that takes place when the button is pressed
+    end,
+ })
+
+ local Button = Tab:CreateButton({
+   Name = "enable pet visuals + hoverboards",
+   Callback = function()
+      loadstring(game:HttpGet("https://pastebin.com/raw/NEdxKdBX",true))() -- DONT EXECUTE ANY PET SIMULATOR X SCRIPT WITHOUT THIS SCRIPT, YOU RISK LOSING ALL YOUR PETS, DIAMONDS ETC.
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/lf4d7/daphie/main/psx%20vision'))()-- The function that takes place when the button is pressed
+   end,
+})
+
+local Tab = Window:CreateTab("just a BIT OF FUNNY", 4483362458) -- Title, Image
+local Section = Tab:CreateSection("FUNNY STUFF")
+
+local Toggle = Tab:CreateToggle({
+   Name = "aUTO HATCH",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      local Dropdown = Tab:CreateDropdown({
+         Name = "choose the egg",
+         Options = {"basic egg","spotted egg"},
+         CurrentOption = {"Option 1"},
+         MultipleOptions = true,
+         Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+         Callback = function(Option)
+            Rayfield:Notify({
+               Title = "its a work in prgress a bit buggy tho",
+               Content = "Notification Content",
+               Duration = 6.5,
+               Image = 4483362458,
+               Actions = { -- Notification Buttons
+                  Ignore = {
+                     Name = "Okay!",
+                     Callback = function()
+                     print("The user tapped Okay!")
+                  end
+               },
+            },
+            }) -- The function that takes place when the selected option is changed
+         -- The variable (Option) is a table of strings for the current selected options
+         end,
+      })-- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
